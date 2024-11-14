@@ -1,0 +1,14 @@
+services:
+  nats-frontend:
+    image: node:22.5.1
+    container_name: nats-frontend
+    tty: true
+    working_dir: /usr/src/app/
+    volumes:
+      - ../../../:/usr/src/app/
+    networks:
+      - nats-network
+
+networks:
+  nats-network:
+    external: true
